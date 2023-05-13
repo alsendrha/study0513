@@ -23,7 +23,7 @@ class MainCalender extends StatelessWidget {
           date.day == selectedDate.day,
       firstDay: DateTime(1800, 1, 1),
       lastDay: DateTime(3000, 1, 1),
-      focusedDay: DateTime.now(),
+      focusedDay: selectedDate,
       headerStyle: const HeaderStyle(
         titleCentered: true,
         formatButtonVisible: false,
@@ -49,6 +49,7 @@ class MainCalender extends StatelessWidget {
             width: 1,
           ),
         ),
+        outsideDaysVisible: false,
         defaultTextStyle: TextStyle(
           fontWeight: FontWeight.w600,
           color: DARK_GREY_COLOR,
