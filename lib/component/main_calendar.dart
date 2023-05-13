@@ -40,7 +40,7 @@ class MainCalender extends StatelessWidget {
         ),
         weekendDecoration: BoxDecoration(
           borderRadius: BorderRadius.circular(6),
-          color: LIGHT_GREY_COLOR,
+          color: DEFAULT_COLOR,
         ),
         selectedDecoration: BoxDecoration(
           borderRadius: BorderRadius.circular(6),
@@ -49,7 +49,10 @@ class MainCalender extends StatelessWidget {
             width: 1,
           ),
         ),
-        outsideDaysVisible: false,
+        outsideDecoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(6),
+        ),
+        outsideDaysVisible: true,
         defaultTextStyle: TextStyle(
           fontWeight: FontWeight.w600,
           color: DARK_GREY_COLOR,
