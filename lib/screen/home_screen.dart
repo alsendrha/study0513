@@ -43,7 +43,7 @@ class _HomeScreenState extends State<HomeScreen> {
       body: SafeArea(
         child: Column(
           children: [
-            MainCalender(
+            MainCalendar(
               selectedDate: selectedDate,
               onDaySelected: onDaySelected,
             ),

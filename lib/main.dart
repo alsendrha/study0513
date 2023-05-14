@@ -1,29 +1,28 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'package:study_0513/database/drift_database.dart';
-import 'package:study_0513/provider/schedule_provider.dart';
-import 'package:study_0513/repository/schedule_repository.dart';
-import 'package:study_0513/screen/home_screen2.dart';
 import 'package:intl/date_symbol_data_local.dart';
 import 'package:get_it/get_it.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:study_0513/screen/home_screen3.dart';
+import 'firebase_options.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   await initializeDateFormatting();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
 
   final database = LocalDatabase();
 
   GetIt.I.registerSingleton<LocalDatabase>(database);
 
-  final repository = ScheduleRepository();
-  final scheduleProvider = ScheduleProvider(repository: repository);
+  // final repository = ScheduleRepository();
+  // final scheduleProvider = ScheduleProvider(repository: repository);
 
   runApp(
-    ChangeNotifierProvider(
-      create: (_) => scheduleProvider,
-      child: const MyApp(),
-    ),
+    const MyApp(),
   );
 }
 
@@ -39,7 +38,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: false,
       ),
-      home: const HomeScreen2(),
+      home: const HomeScreen3(),
     );
   }
 }
