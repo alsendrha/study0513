@@ -64,7 +64,7 @@ class HomeScreen2 extends StatelessWidget {
                     direction: DismissDirection.startToEnd,
                     onDismissed: (direction) {
                       provider.deleteSchedule(
-                          date: selectedDate, id: schedule.id!);
+                          date: selectedDate, id: schedule.id);
                     },
                     child: Padding(
                       padding: const EdgeInsets.only(
@@ -73,9 +73,9 @@ class HomeScreen2 extends StatelessWidget {
                         right: 8,
                       ),
                       child: ScheduleCard(
-                        startTime: schedule.startTime!,
-                        endTime: schedule.endTime!,
-                        content: schedule.content!,
+                        startTime: schedule.startTime,
+                        endTime: schedule.endTime,
+                        content: schedule.content,
                       ),
                     ),
                   );
