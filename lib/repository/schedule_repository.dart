@@ -4,7 +4,10 @@ import 'package:dio/dio.dart';
 import 'package:study_0513/model/schedule_model.dart';
 
 class ScheduleRepository {
-  final _dio = Dio();
+  final _dio = Dio(BaseOptions(
+    connectTimeout: const Duration(seconds: 10),
+    receiveTimeout: const Duration(seconds: 10),
+  ));
   final _targetUrl =
       'http://${Platform.isAndroid ? '10.0.2.2' : 'localhost'}:3000/schedule';
 
