@@ -49,10 +49,9 @@ class MainCalendar extends StatelessWidget {
             width: 1,
           ),
         ),
-        outsideDecoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(6),
-        ),
-        outsideDaysVisible: true,
+        // outsideDecoration: BoxDecoration(
+        //   borderRadius: BorderRadius.circular(6),
+        // ),
         defaultTextStyle: TextStyle(
           fontWeight: FontWeight.w600,
           color: DARK_GREY_COLOR,
